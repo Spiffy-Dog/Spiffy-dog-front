@@ -52,8 +52,7 @@ $accent-color: #556b2f;
 $primary-bg-color: #eee2dc;
 $secondary-bg-color: #bab2b5;
 
-$decorative-color: #264061;
-//используется для фона бургер-меню и для текста суточной нормы ккал
+$decorative-color: #455529;
 
 // transition
 $cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -124,7 +123,7 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
 }
 
-@mixin orangeBtn {
+@mixin greenBtn {
   width: 176px;
   background-color: $accent-color;
   color: $accent-text-color;
