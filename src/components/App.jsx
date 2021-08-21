@@ -1,6 +1,7 @@
 import { Switch, Route } from 'react-router-dom';
 import { Suspense, useEffect } from 'react';
 import routes from '../routes';
+import Footer from '../components/Footer';
 
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../redux/auth';
@@ -56,6 +57,7 @@ export default function App() {
           )}
         </Switch>
       </Suspense>
+      <Footer />
     </>
   );
 }
