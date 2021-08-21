@@ -4,7 +4,7 @@ import SocialLinks from '../SocialLinks';
 const Footer = () => {
   return (
     <footer>
-      <SocialLinks fill="#556B2F" backgroundColor="fff" />
+      <SocialLinks fill="#556B2F" backgroundColor="white" />
     </footer>
   );
 };
