@@ -43,13 +43,25 @@ export default function SocialLinks({ backgroundColor, fill }) {
       </ListIcon>
       <ListIcon backgroundColor={backgroundColor} fill={fill}>
         <a
-          href="https://www.instagram.com/"
-          aria-label="Instagram"
+          href="https://www.facebook.com/"
+          aria-label="Facebook"
           target="_blank"
           rel="noreferrer noopener"
         >
           <Icon width="18" height="35" viewBox="0 0 18 34" fill={fill}>
             <path d="M 11.746094 34 L 11.746094 18.515625 L 17.046875 18.515625 L 17.851562 12.453125 L 11.746094 12.453125 L 11.746094 8.632812 C 11.746094 6.851562 12.214844 5.667969 14.765625 5.667969 L 17.988281 5.667969 L 17.988281 0.261719 C 17.449219 0.199219 15.503906 0 13.222656 0 C 8.523438 0 5.300781 2.832031 5.300781 7.972656 L 5.300781 12.453125 L 0 12.453125 L 0 18.515625 L 5.300781 18.515625 L 5.300781 34 Z M 11.746094 34 " />
+          </Icon>
+        </a>
+      </ListIcon>
+      <ListIcon backgroundColor={backgroundColor} fill={fill}>
+        <a
+          href="https://web.telegram.org/"
+          aria-label="Telegram"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <Icon width="29" height="25" viewBox="0 0 40 35" fill={fill}>
+            <path d="M 15.828125 23.097656 L 30.800781 34.523438 C 32.511719 35.496094 33.742188 34.992188 34.167969 32.886719 L 40.261719 3.222656 C 40.886719 0.636719 39.308594 -0.535156 37.675781 0.230469 L 1.886719 14.484375 C -0.554688 15.496094 -0.542969 16.902344 1.441406 17.53125 L 10.625 20.492188 L 31.886719 6.636719 C 32.890625 6.007812 33.8125 6.347656 33.054688 7.039062 Z M 15.828125 23.097656 " />
           </Icon>
         </a>
       </ListIcon>
