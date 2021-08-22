@@ -26,7 +26,13 @@ const ListIcon = styled.li`
 
 export default function SocialLinks({ backgroundColor, fill }) {
   return (
-    <ul>
+    <ul
+      style={{
+        display: 'flex',
+        width: '216px',
+        justifyContent: 'space-between',
+      }}
+    >
       <ListIcon backgroundColor={backgroundColor} fill={fill}>
         <a
           href="https://www.instagram.com/"
