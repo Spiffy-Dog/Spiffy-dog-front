@@ -9,11 +9,15 @@ footer {
 }
 
 .logo {
-  margin: 0 auto;
-  outline: 3px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper {
   padding: 35px 0;
   width: 90%;
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  justify-content: center;
 }

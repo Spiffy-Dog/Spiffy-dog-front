@@ -8,7 +8,10 @@ const Footer = () => {
   return (
     <footer>
       <div className={style.wrapper}>
-        <Logo height="124px" fill="white" />
+        <div className={style.logo}>
+          <Logo height="124px" fill="white" />
+        </div>
+
         <SocialLinks fill="#556B2F" backgroundColor="white" />
       </div>
     </footer>
