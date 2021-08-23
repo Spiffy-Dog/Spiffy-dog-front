@@ -17,7 +17,7 @@ footer {
   padding: 35px 10px;
   width: 90%;
   display: grid;
-  grid-template-rows: repeat(5, auto);
+  grid-template-rows: repeat(4, auto);
   justify-content: center;
 }
 
@@ -51,6 +51,22 @@ footer {
 }
 
 .paragraph {
+  @include font(400, 16px, 1.1, $primary-font);
   color: $accent-text-color;
   text-align: center;
+}
+
+.creditCardsWrapper {
+  @include flexbox;
+  & svg {
+    width: 64px;
+    height: 46px;
+  }
+  width: 90%;
+  border-top: 1px solid $primary-bg-color;
+  padding-top: 35px;
+}
+
+.bottom {
+  @include flexbox;
 }

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import SocialLinks from '../SocialLinks';
 import Logo from '../Logo';
 import styled from 'styled-components';
+import { ReactComponent as Visa } from '../../assets/images/visa.svg';
+import { ReactComponent as MasterCard } from '../../assets/images/master-card.svg';
 
 const Footer = () => {
   return (
@@ -35,8 +37,14 @@ const Footer = () => {
           <SocialLinks fill="#556B2F" backgroundColor="white" />
         </div>
         <p className={style.paragraph}>
-          Сайт разработан <Link className={style.team}>группой #5</Link>{' '}
+          Сайт разработан <Link className={style.team}>группой #5</Link>
         </p>
+      </div>
+      <div className={style.bottom}>
+        <div className={style.creditCardsWrapper}>
+          <Visa />
+          <MasterCard style={{ marginLeft: '17px' }} />
+        </div>
       </div>
     </footer>
   );
