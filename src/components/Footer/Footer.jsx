@@ -11,8 +11,32 @@ const Footer = () => {
         <div className={style.logo}>
           <Logo height="124px" fill="white" />
         </div>
-
-        <SocialLinks fill="#556B2F" backgroundColor="white" />
+        <ul className={style.linksWrapper}>
+          <li>
+            <Link className={style.link}>О нас</Link>
+          </li>
+          <li>
+            <Link className={style.link}>Каталог</Link>
+          </li>
+          <li>
+            <Link className={style.link}>Мерки</Link>
+          </li>
+          <li>
+            <Link className={style.link}>Доставка/Оплата</Link>
+          </li>
+          <li>
+            <Link className={style.link}>Контакты</Link>
+          </li>
+          <li>
+            <Link className={style.link}>Политика конфиденциальности</Link>
+          </li>
+        </ul>
+        <div className={style.logo}>
+          <SocialLinks fill="#556B2F" backgroundColor="white" />
+        </div>
+        <p className={style.paragraph}>
+          Сайт разработан <Link className={style.team}>группой #5</Link>{' '}
+        </p>
       </div>
     </footer>
   );

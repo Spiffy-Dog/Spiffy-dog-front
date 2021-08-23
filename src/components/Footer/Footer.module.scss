@@ -5,19 +5,52 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: $accent-color;
-  height: 802px;
+  height: 735px;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexbox;
+  margin-bottom: 40px;
 }
 
 .wrapper {
-  padding: 35px 0;
+  padding: 35px 10px;
   width: 90%;
   display: grid;
   grid-template-rows: repeat(5, auto);
   justify-content: center;
+}
+
+.link {
+  color: $accent-text-color;
+  text-decoration: none;
+  @include font(400, 18px, 1.1, $primary-font, $primary-letter-spacing);
+  transition: 250ms;
+  &:hover {
+    color: $secondary-accent;
+  }
+}
+
+.linksWrapper {
+  margin-bottom: 45px;
+
+  & li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.team {
+  @include font(900, 18px, 1.1, $primary-font, $primary-letter-spacing);
+  color: $secondary-accent;
+  text-decoration: none;
+
+  transition: 250ms;
+  &:hover {
+    color: $accent-text-color;
+  }
+}
+
+.paragraph {
+  color: $accent-text-color;
+  text-align: center;
 }

@@ -45,7 +45,7 @@ $primary-letter-spacing: 0.04em;
 $primary-text-color: #123c69;
 $secondary-text-color: #9b9faa;
 $accent-text-color: #ffffff;
-$light-gray: #e0e0e0;
+$secondary-accent: #ffc000;
 
 $accent-color: #556b2f;
 
@@ -179,4 +179,10 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
