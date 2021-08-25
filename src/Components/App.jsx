@@ -2,8 +2,8 @@ import { Switch, Route } from 'react-router-dom';
 import { Suspense, useEffect } from 'react';
 import routes from '../routes';
 
-import { useDispatch } from 'react-redux';
-import { authOperations } from '../redux/auth';
+// import { useDispatch } from 'react-redux';
+// import { authOperations } from '../redux/auth';
 
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
@@ -14,10 +14,10 @@ import sviter from './Products/sviter.json';
 import dozdevik from './Products/dozdevik.json';
 
 export default function App() {
-  const dispatch = useDispatch();
-  const onRefresh = () => {
-    dispatch(authOperations.currentUser());
-  };
+  // const dispatch = useDispatch();
+  // const onRefresh = () => {
+  //   dispatch(authOperations.currentUser());
+  // };
 
   // useEffect(() => {
   //     onRefresh();
