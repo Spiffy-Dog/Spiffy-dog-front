@@ -1,0 +1,65 @@
+import { Switch, Route } from 'react-router-dom';
+import { Suspense, useEffect } from 'react';
+import routes from '../routes';
+
+import { useDispatch } from 'react-redux';
+import { authOperations } from '../redux/auth';
+
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
+import Header from './Header';
+import Loader from './Loader';
+import Products from './Products/Products';
+import sviter from './Products/sviter.json';
+import dozdevik from './Products/dozdevik.json';
+
+export default function App() {
+  const dispatch = useDispatch();
+  const onRefresh = () => {
+    dispatch(authOperations.currentUser());
+  };
+
+  // useEffect(() => {
+  //     onRefresh();
+  //     // eslint-disable-next-line
+  // }, []);
+
+  return (
+    <>
+      <Header />
+      <Products sviters={sviter} dozdeviks={dozdevik} />
+      <Suspense fallback={<Loader />}>
+        <Switch>
+          {routes.map(
+            ({ path, isProtected, redirectTo, exact, component: Component }) =>
+              isProtected === null ? (
+                <Route
+                  exact={exact}
+                  key={[path]}
+                  path={path}
+                  component={Component}
+                  redirectTo={redirectTo}
+                />
+              ) : isProtected ? (
+                <PrivateRoute
+                  exact={exact}
+                  key={path}
+                  path={path}
+                  component={Component}
+                  redirectTo={redirectTo}
+                />
+              ) : (
+                <PublicRoute
+                  exact={exact}
+                  key={[path]}
+                  path={path}
+                  component={Component}
+                  redirectTo={redirectTo}
+                />
+              ),
+          )}
+        </Switch>
+      </Suspense>
+    </>
+  );
+}
