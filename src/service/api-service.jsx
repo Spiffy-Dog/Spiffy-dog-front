@@ -1,5 +1,5 @@
 import axios from 'axios';
-axios.defaults.baseURL = ``;
+axios.defaults.baseURL = `https://spiffy-dog.herokuapp.com`;
 
 const apiService = {
   getCurrentUser() {
