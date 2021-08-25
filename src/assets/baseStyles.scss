@@ -1,0 +1,169 @@
+/*========================= FONTS =======================*/
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto'), url('./fonts/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), url('./fonts/Roboto-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto'), url('./fonts/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ramona', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  src: local('Ramona'), url('./fonts/Ramona-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ramona', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  src: local('Ramona'), url('./fonts/Ramona-Bold.ttf') format('truetype');
+}
+
+/*==================== VARIABLES =======================*/
+
+// Fonts
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Ramona', sans-serif;
+$primary-letter-spacing: 0.04em;
+
+// Colors
+$primary-text-color: #123c69;
+$secondary-text-color: #9b9faa;
+$accent-text-color: #ffffff;
+$light-gray: #e0e0e0;
+
+$accent-color: #556b2f;
+
+$primary-bg-color: #eee2dc;
+$secondary-bg-color: #bab2b5;
+
+$decorative-color: #264061;
+//используется для фона бургер-меню и для текста суточной нормы ккал
+
+// transition
+$cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+/*==================== MIXINS ==================*/
+
+@mixin for-size($range) {
+  $mobile: 320px;
+  $tablet: 768px;
+  $desktop: 1280px;
+
+  @if $range == mobile-only {
+    @media (max-width: #{$mobile}) {
+      @content;
+    }
+  } @else if $range == mobile {
+    @media (min-width: $mobile) {
+      @content;
+    }
+  } @else if $range == tablet-only {
+    @media (max-width: #{$tablet - 1}) {
+      @content;
+    }
+  } @else if $range == tablet {
+    @media (min-width: $tablet) {
+      @content;
+    }
+  } @else if $range == desktop-only {
+    @media (max-width: #{$desktop - 1}) {
+      @content;
+    }
+  } @else if $range == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  }
+}
+
+@mixin flexbox($jc: center, $ai: center) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin font(
+  $weight,
+  $size,
+  $line-height,
+  $font-family: $primary-font,
+  $letter-spacing: $primary-letter-spacing
+) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  font-family: $font-family;
+  letter-spacing: $letter-spacing;
+}
+
+/*==================== INPUT-AUTOFILL ==================*/
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+
+@mixin orangeBtn {
+  width: 176px;
+  background-color: $accent-color;
+  color: $accent-text-color;
+  padding: 13px 0;
+  display: block;
+  @include font(700, 14px, 1.21);
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(85, 107, 47, 0.5);
+  border-radius: 30px;
+  transition: $cubic;
+
+  &:disabled {
+    background-color: $secondary-text-color;
+    box-shadow: 0px 4px 10px rgba(155, 159, 170, 0.5);
+  }
+  &:hover:not([disabled]) {
+    background-color: $accent-text-color;
+    color: $accent-color;
+    border: 2px solid $accent-color;
+  }
+}
+
+@mixin outlinedBtn {
+  width: 176px;
+  background-color: $accent-text-color;
+  color: $accent-color;
+  border: 2px solid $accent-color;
+  padding: 13px 0;
+  display: block;
+  @include font(700, 14px, 1.21);
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(85, 107, 47, 0.5);
+  border-radius: 30px;
+  transition: $cubic;
+
+  &:hover {
+    background-color: $accent-color;
+    color: $accent-text-color;
+    border: 2px solid $accent-color;
+  }
+}
